@@ -4,17 +4,18 @@ import Box from '@mui/material/Box';
 import PaiChart from '../component/PaiChart';
 import Barchart from '../component/Barchart';
 import ViewProduct from '../component/ViewProduct';
+import AddProduct from '../component/AddProduct';
 
-const Body = () => {
+const Body = ({}) => {
   return (
     <div>
-        <Container>
-        <Box marginTop={10} sx={{display:'flex', bgcolor: '#cfe8fc',cursor:'pointer'}}>
-            <PaiChart/>
-            <Barchart/>
+      <Container maxWidth='lg'>
+        <Box sx={{display: 'inline-flex'}}>
+          <PaiChart />
+          <Barchart />
         </Box>
-        <ViewProduct/>
-        </Container>
+        <ViewProduct />
+      </Container>
     </div>
   )
 }

@@ -1,29 +1,27 @@
-import { AppBar } from '@mui/material'
+import { AppBar, Button } from '@mui/material'
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import React from 'react'
-import './Header.css'
 import Search from '../component/Search';
+import MyButton from '../component/Button';
 
-const Header = ({value}) => {
-  const handleClick=()=>{
-  return(
-      <Header/>
-    )
-  }
+const Header = ({ value, button }) => {
+
   return (
-    <div className='header'>
-        <AppBar>
-          <Toolbar> 
-            <Typography>Logo</Typography>
-            <div style={{display:'inline-flex',position:'relative',left:'900px'}}>
-            {value === 'appheader' ? <Search/>:null}
-            {value === 'appheader' ? 
-            <Button color="inherit" onClick={handleClick}>Add Product</Button> :null}
+    <div>
+      <div>
+        <AppBar position='static'>
+          <Toolbar>
+            <Typography variant="h6"
+              component="div" sx={{ flexGrow: 1 }}> Logo </Typography>
+            <div>
+              {value === 'appheader' ? <Search /> : null}
+            </div>
+            <div>
+              < MyButton />
             </div>
           </Toolbar>
         </AppBar>
+      </div>
     </div>
   )
 }

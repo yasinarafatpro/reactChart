@@ -27,7 +27,7 @@ export default class PaiChart extends PureComponent {
 
     return (
       <div>
-        <h3> Pi Chart</h3>
+        <h3> Pie Chart</h3>
         <div>
           <PieChart width={400} height={400}>
             <Tooltip />
