@@ -1,6 +1,7 @@
 const express= require('express');
 const cookieParser=require('cookie-parser');
-var cors = require('cors')
+var cors = require('cors');
+const productValidator = require('./src/validator/ProductValidator');
 const app=express();
 app.use(cors())
 app.use(express.json())
@@ -16,7 +17,7 @@ app.get('/hello', (req, res) => {
 
 app.post('/user')
 
-app.post('/post', (req, res) => {
+app.post('/post',productValidator, (req, res) => {
     console.log(req.body)
     res.send({
         data:req.body

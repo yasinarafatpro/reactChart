@@ -6,9 +6,9 @@ import { Button, FormControl, InputLabel, MenuItem, Paper, Select, Stack, Table,
 const AddProduct = ({ product }) => {
 
   const [form, setForm] = useState({
-    productname: "", brand: "", ram: "", tags: "", price: ""
+    productname: "", brand: "", ram: "", tags:"", price: ""
   })
-  const [data,setData]=useState({})
+  const [data,setData]=useState([{}])
 
   const handlwInput = (e) => {
     const { name, value } = e.target
@@ -47,9 +47,9 @@ const AddProduct = ({ product }) => {
         <FormControl fullWidth sx={{ m: 1 }}>
           <InputLabel htmlFor="my-input">Tags</InputLabel>
           <Select id="standard-basic" label="Search and Select" name='tags' variant="outlined" type='text' value={form.tags} onChange={handlwInput}>
-            <MenuItem value={10}>Ten</MenuItem>
-            <MenuItem value={20}>Twenty</MenuItem>
-            <MenuItem value={30}>Thirty</MenuItem>
+            <MenuItem value={'10'}>Ten</MenuItem>
+            <MenuItem value={'20'}>Twenty</MenuItem>
+            <MenuItem value={'30'}>Thirty</MenuItem>
           </Select><br /><br />
         </FormControl>
 
@@ -79,7 +79,9 @@ const AddProduct = ({ product }) => {
               </TableRow>
             </TableHead>
             <TableBody>
-            
+            {data.map((id,item)=>{
+              return <li key={id}>{item}</li>
+            })}
             </TableBody>
           </Table>
         </TableContainer>
