@@ -5,8 +5,14 @@ const Product=mongoose.Schema({
       type:String,
       required:true
     },
-    brand:String,
-    ram:Number,
+    brand:{
+      type:String,
+      required:true
+    },
+    ram:{
+      type:Number,
+      required:true
+    },
     tags:Number,
     price:Number,
     createdAt:{
@@ -17,14 +23,10 @@ const Product=mongoose.Schema({
     updatedAt:{
         type:Date,
         default:()=>Date.now()
-    },
-    sameFeatcher:mongoose.SchemaTypes.ObjectId,
-    feachers:[String],
-    madeIn:{street:String,city:String},
-    email:{
-        type : String,
-        required : true,
-        lowercase:true
-      }
+    }
+    // sameFeatcher:mongoose.SchemaTypes.ObjectId,
+    // feachers:[String],
+    // madeIn:{street:String,city:String},
+  
 })
 module.exports=mongoose.model("Product",Product)

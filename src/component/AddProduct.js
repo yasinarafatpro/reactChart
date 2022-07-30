@@ -17,7 +17,7 @@ const AddProduct = ({ product }) => {
   const handleSubmit = async(event) => {
     event.preventDefault();
     try{
-      const response=await fetch('http://localhost:3001/post',{
+      const response=await fetch('http://localhost:3001/api/post',{
         method:'POST',
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify(form)
@@ -79,9 +79,9 @@ const AddProduct = ({ product }) => {
               </TableRow>
             </TableHead>
             <TableBody>
-            {data.map((id,item)=>{
+            {/* {data.map((id,item)=>{
               return <li key={id}>{item}</li>
-            })}
+            })} */}
             </TableBody>
           </Table>
         </TableContainer>
